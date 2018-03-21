@@ -1,0 +1,100 @@
+
+.header {
+    background-color: #b9f6ca;
+    /*margin-left: -8px;
+    margin-right: -8px;*/
+    margin-top: -8px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #004d40;
+    overflow: hidden;
+    /*margin-left: -8px;
+    margin-right: -8px;*/
+}
+
+/* Style the links inside the navigation bar */
+.topnav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    font-size: 17px;
+}
+
+.topnav li {
+    float: left;
+}
+/* Change the color of links on hover */
+.topnav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.topnav li a:hover {
+    background-color: #111;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+    background-color: #009688;
+    color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+.search-container button:hover {
+  opacity: 1;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 36%;
+  background: #ddd;
+  font-size: 17px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #b2dfdb;
+  opacity: 0.8;
+}
+
+.search-container input[type=text]{
+  padding: 6px;
+  margin-top: 8px;
+  margin-left: 30%;
+  font-size: 17px;
+  width:30%;
+  border: 1px solid #ccc;
+}
+
+.footer-bottom {
+  background: #333;
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  color: #e1f5fe;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-left: 15px;
+}
+
+.footer-bottom p span a {
+  color: #FE980F;
+  font-style: italic;
+  text-decoration: underline;
+}

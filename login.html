@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #ede7f6;
+	padding: 10%;
+}
+form {
+	border: 3px solid #f1f1f1;
+	margin-right: 25%;
+	margin-left:25%;
+	background-color: #d1c4e9;
+	border-radius: 15px;
+}
+hr {
+	    border: 1px solid #f1f1f1;
+	    margin-bottom: 25px;
+
+	}    	
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #7e57c2;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 15px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    /*padding-top: 10px;*/
+}
+
+</style>
+<body>
+	<form action="login.php" method="post">
+	  <div class="container">
+	  	<h1>Login</h1>
+	    
+	    <hr>
+
+	    <label for="email"><b>Email</b></label>
+	    <input type="email" placeholder="Enter Email" name="email" required>
+
+	    <label for="psw"><b>Password</b></label>
+	    <input type="password" placeholder="Enter Password" name="psw" required>
+	        
+	    <button type="submit">Login</button> <br>
+	    <label>
+	      <input type="checkbox" checked="checked" name="remember"> Remember me 
+	      <span class="psw">Forgot <a href="#" style="color:red">password?</a></span>
+	    </label>
+	  
+	    <!--<button type="button" class="cancelbtn">Cancel</button>-->
+	    
+	  </div>
+	</form>
+</body>
+</html>
