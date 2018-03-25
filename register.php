@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+$_SESSION["loggedin"]="0";
 $conn = mysqli_connect("localhost","root","","abc") or die('Error connecting to MySQL server.');
 
 $n="a";
@@ -50,6 +52,7 @@ if (isset($_POST["email"])){
  else
  {
  	$statement=mysqli_query($conn, "INSERT INTO userdb(Name, Email, Password, Confirm) VALUES('$n','$em','$pa','$co')");
+ 	echo $statement;
  	if ($statement) {
  		#echo "You have been successfully registered";
  		?>
@@ -58,10 +61,17 @@ if (isset($_POST["email"])){
 		</script>
 
 	 	<?php
- 		include 'home.html';
+	 	global $n, $em;
+	 	#session_start();
+	 	$_SESSION["Name"]=$n;
+	 	$_SESSION["Email"]=$em;
+	 	$_SESSION["loggedin"]="1";
+
+ 		header('Location:index.php');
  	}
  	else {
  		#echo "Sorry for your inconvenience";
+
  		?>
 	 	<script type="text/javascript">
 			alert("Sorry for your inconvenience..");	

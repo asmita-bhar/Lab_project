@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,6 +94,11 @@
 	}
 </style>
 <body>
+	<?php
+		$conn = mysqli_connect("localhost","root","","abc") or die('Error connecting to MySQL server.');
+		$result = mysqli_query($conn, "SELECT * from userdb");
+		#$random=$_SESSION["Name"];
+	?>
 	<header class="header" id="head">
 		<br>
 		<br>

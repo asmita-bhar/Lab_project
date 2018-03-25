@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+$_SESSION["loggedin"]="1";
 $conn = mysqli_connect("localhost","root","","abc") or die('Error connecting to MySQL server.');
 
 $em="a";
@@ -44,13 +46,18 @@ if (isset($_POST["email"])){
  }
  else 
  {
+ 	global $em;
  	?>
 	<script type="text/javascript">
 		alert("Successfully Logged In..");	
 	</script>
 	<?php
- 	#echo "You have been successfully logged in";
- 	include 'home.html';
+
+ 	
+ 	$_SESSION["Email"]=$em;
+ 	$_SESSION["loggedin"]="1";
+
+ 	header('Location:index.php');
  }
 
  ?>
