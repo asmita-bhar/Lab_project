@@ -107,10 +107,24 @@ session_start();
 	<section id="nav">
 		<div class="topnav" id="myTopnav">
 			<ul>
-				<li><a class="active" href="home.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-				<li style="float:right"><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
-				<li style="float:right"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				<li style="float:right"><a href="register.html"><span class="glyphicon glyphicon-edit"></span> Register</a></li>
+				<li><a class="active" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+				<li style="float:right"><a href="about.php"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+				
+				<?php 
+
+				if(!isset($_SESSION["loggedin"])) 
+				{ ?>
+					<li style="float:right"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li style="float:right"><a href="register.html"><span class="glyphicon glyphicon-edit"></span> Register</a></li>
+				 
+				<?php }
+				else
+				{
+				 ?>
+					<li style="float:right"><a href="logout.php"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+					<li style="float:right"><a href="profile.php"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+				<?php
+				} ?>
 			</ul>
 		</div>
 	</section>
