@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 ?>
 
@@ -35,7 +36,7 @@ session_start();
 				<?php 
 
 				if(!isset($_SESSION["loggedin"])) 
-				{ ?>
+				{ echo "a"; ?>
 					<li style="float:right"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					<li style="float:right"><a href="register.html"><span class="glyphicon glyphicon-edit"></span> Register</a></li>
 				 
@@ -44,7 +45,7 @@ session_start();
 				{
 				 ?>
 					<li style="float:right"><a href="logout.php"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
-					<li style="float:right"><a href="profile.php"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+					<li style="float:right"><a href="profile.php"><span class="glyphicon glyphicon-user"></span> Welcome, <?php echo $_SESSION["Name"]; ?> </a></li>
 				<?php
 				} ?>
 

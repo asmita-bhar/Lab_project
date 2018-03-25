@@ -6,9 +6,10 @@ $conn = mysqli_connect("localhost","root","","abc") or die('Error connecting to 
 
 if ($_SESSION["loggedin"]=="1") 
 {
+	session_unset();
 	session_destroy();
-	echo "string";
-	$_SESSION["loggedin"]=="0";
+	#echo "string";
+	#$_SESSION["loggedin"]=="0";
 	?>
 
 	<script type="text/javascript">

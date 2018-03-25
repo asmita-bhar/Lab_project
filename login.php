@@ -31,7 +31,7 @@ if (isset($_POST["email"])){
  	include 'login.html';
  }
  
- $query1 = mysqli_query($conn,"SELECT Email,Password from userdb where Email = '$em' and Password = '$pa'");
+ $query1 = mysqli_query($conn,"SELECT Name from userdb where Email = '$em' and Password = '$pa'");
 
  if(mysqli_num_rows($query1) == 0)
  {
@@ -53,7 +53,9 @@ if (isset($_POST["email"])){
 	</script>
 	<?php
 
- 	
+ 	$result = mysqli_fetch_assoc($query1);
+ 	#echo $result["Name"];
+ 	$_SESSION["Name"] = $result["Name"];
  	$_SESSION["Email"]=$em;
  	$_SESSION["loggedin"]="1";
 
