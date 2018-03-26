@@ -33,21 +33,24 @@ if (isset($_POST["email"])){
  	#echo "User already exists";
  	?>
  	<script type="text/javascript">
-		alert("User already exists..");	
+		if(confirm("User already exists..")){
+			window.location.href = "register.html";
+		}		
 	</script>
 
  	<?php
- 	include 'register.html';
+ 	
  }
  else if ($pa !== $co) {
  	#echo "Passwords don't match";
  	?>
  	<script type="text/javascript">
-		alert("Passwords don't match..");	
+		if(confirm("Passwords don't match ..")){
+			window.location.href = "register.html";
+		}		
 	</script>
 
  	<?php
- 	include 'register.html';
  }
  else
  {
@@ -57,7 +60,9 @@ if (isset($_POST["email"])){
  		#echo "You have been successfully registered";
  		?>
 	 	<script type="text/javascript">
-			alert("You have been successfully registered..");	
+			if(confirm("You have been successfully registered...")){
+			window.location.href = "index,php";
+		}		
 		</script>
 
 	 	<?php
@@ -67,7 +72,7 @@ if (isset($_POST["email"])){
 	 	$_SESSION["Email"]=$em;
 	 	$_SESSION["loggedin"]="1";
 
- 		header('Location:index.php');
+ 		
  	}
  	else {
  		#echo "Sorry for your inconvenience";

@@ -13,11 +13,13 @@ if ($_SESSION["loggedin"]=="1")
 	?>
 
 	<script type="text/javascript">
-		alert("Successfully Logged Out..");	
+		if(confirm("Successfully logged out..")){
+			window.location.href = "index.php";
+		}	
 	</script>
 		
 	<?php
-	header('Location:index.php');
+	#header('Location:index.php');
 }
 
 ?>	

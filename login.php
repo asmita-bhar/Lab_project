@@ -24,11 +24,13 @@ if (isset($_POST["email"])){
  	#echo "User doesn't exists";
  	?>
  	<script type="text/javascript">
-		alert("Invalid ID ..");	
+		if(confirm("Invalid ID ..")){
+			window.location.href = "login.html";
+		}	
 	</script>
 
  	<?php
- 	include 'login.html';
+ 	#include 'login.html';
  }
  
  $query1 = mysqli_query($conn,"SELECT Name from userdb where Email = '$em' and Password = '$pa'");
@@ -38,7 +40,9 @@ if (isset($_POST["email"])){
  	#echo "Incorrect Password";
  	?>
  	<script type="text/javascript">
-		alert("Incorrect Password..");	
+		if(confirm("Incorrect Password..")){
+			window.location.href = "login.html";
+		}	
 	</script>
 
  	<?php
@@ -49,7 +53,9 @@ if (isset($_POST["email"])){
  	global $em;
  	?>
 	<script type="text/javascript">
-		alert("Successfully Logged In..");	
+		if(confirm("Successfully Logged In..")){
+			window.location.href = "index.php";
+		}
 	</script>
 	<?php
 
@@ -59,7 +65,7 @@ if (isset($_POST["email"])){
  	$_SESSION["Email"]=$em;
  	$_SESSION["loggedin"]="1";
 
- 	header('Location:index.php');
+ 	
  }
 
  ?>
