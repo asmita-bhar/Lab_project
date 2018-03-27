@@ -122,7 +122,7 @@ session_start();
 				{
 				 ?>
 					<li style="float:right"><a href="logout.php"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
-					<li style="float:right"><a href="profile.php"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+					<li style="float:right"><a href="profile.php"><span class="glyphicon glyphicon-user"></span> Welcome, <?php echo $_SESSION["Name"]; ?> </a></li>
 				<?php
 				} ?>
 			</ul>
