@@ -1,7 +1,7 @@
 <?php
 
-session_start();
-$_SESSION["loggedin"]="1";
+
+
 $conn = mysqli_connect("localhost","root","","abc") or die('Error connecting to MySQL server.');
 
 $em="a";
@@ -58,7 +58,7 @@ if (isset($_POST["email"])){
 		}
 	</script>
 	<?php
-
+	session_start();
  	$result = mysqli_fetch_assoc($query1);
  	#echo $result["Name"];
  	$_SESSION["Name"] = $result["Name"];

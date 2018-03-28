@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-$_SESSION["loggedin"]="0";
 $conn = mysqli_connect("localhost","root","","abc") or die('Error connecting to MySQL server.');
 
 $n="a";
@@ -34,7 +32,7 @@ if (isset($_POST["email"])){
  	?>
  	<script type="text/javascript">
 		if(confirm("User already exists..")){
-			window.location.href = "register.html";
+			window.location.href = "index.php";
 		}		
 	</script>
 
@@ -55,17 +53,18 @@ if (isset($_POST["email"])){
  else
  {
  	$statement=mysqli_query($conn, "INSERT INTO userdb(Name, Email, Password, Confirm) VALUES('$n','$em','$pa','$co')");
- 	echo $statement;
+ 	//echo $statement;
  	if ($statement) {
  		#echo "You have been successfully registered";
  		?>
 	 	<script type="text/javascript">
 			if(confirm("You have been successfully registered...")){
-			window.location.href = "index,php";
+			window.location.href = "index.php";
 		}		
 		</script>
 
 	 	<?php
+	 	session_start();
 	 	global $n, $em;
 	 	#session_start();
 	 	$_SESSION["Name"]=$n;
