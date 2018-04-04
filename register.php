@@ -4,6 +4,7 @@ $conn = mysqli_connect("localhost","root","","abc") or die('Error connecting to 
 
 $n="a";
 $em="a";
+$ad="a";
 $pa="a";
 $co="a";
 
@@ -13,6 +14,10 @@ if (isset($_POST["name"])){
 
 if (isset($_POST["email"])){
  	$em = $_POST["email"];
+ } 
+
+ if (isset($_POST["address"])){
+ 	$ad = $_POST["address"];
  } 
 
  if (isset($_POST["psw"])){
@@ -52,7 +57,7 @@ if (isset($_POST["email"])){
  }
  else
  {
- 	$statement=mysqli_query($conn, "INSERT INTO userdb(Name, Email, Password, Confirm) VALUES('$n','$em','$pa','$co')");
+ 	$statement=mysqli_query($conn, "INSERT INTO userdb(Name, Email, Address, Password, Confirm) VALUES('$n','$em','$ad','$pa','$co')");
  	//echo $statement;
  	if ($statement) {
  		#echo "You have been successfully registered";
